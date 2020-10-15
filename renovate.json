@@ -1,0 +1,9 @@
+{
+  "packageRules": [
+    {
+      "packageNames": ["golang"],
+      "updateTypes": ["minor", "patch", "pin"],
+      "automerge": true
+    }
+  ]
+}
