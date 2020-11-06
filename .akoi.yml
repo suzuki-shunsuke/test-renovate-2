@@ -6,31 +6,31 @@ link_path: ".akoi/bin/{{.Name}}"
 packages:
   github-comment:
     url: 'https://github.com/suzuki-shunsuke/{{.Name}}/releases/download/{{.Version}}/{{.Name}}_{{trimPrefix "v" .Version}}_{{.OS}}_{{.Arch}}.tar.gz'
-    version: v1.12.0 # renovate: github-comment
+    version: v1.12.0 # renovate: depName=suzuki-shunsuke/github-comment
     files:
     - name: github-comment
       archive: "{{.Name}}"
   conftest:
     url: https://github.com/open-policy-agent/conftest/releases/download/{{.Version}}/conftest_{{trimPrefix "v" .Version}}_linux_x86_64.tar.gz
-    version: v0.20.0 # renovate: conftest
+    version: v0.20.0 # renovate: depName=open-policy-agent/conftest
     files:
     - name: conftest
       archive: conftest
   ci-info:
     url: 'https://github.com/suzuki-shunsuke/{{.Name}}/releases/download/{{.Version}}/{{.Name}}_{{trimPrefix "v" .Version}}_{{.OS}}_{{.Arch}}.tar.gz'
-    version: v0.1.0 # renovate: ci-info
+    version: v0.1.0 # renovate: depName=suzuki-shunsuke/ci-info
     files:
     - name: ci-info
       archive: "{{.Name}}"
   matchfile:
     url: 'https://github.com/suzuki-shunsuke/{{.Name}}/releases/download/{{.Version}}/{{.Name}}_{{trimPrefix "v" .Version}}_{{.OS}}_{{.Arch}}.tar.gz'
-    version: v0.1.0 # renovate: matchfile
+    version: v0.1.0 # renovate: depName=suzuki-shunsuke/matchfile
     files:
     - name: matchfile
       archive: "{{.Name}}"
   tfnotify:
     url: https://github.com/mercari/{{.Name}}/releases/download/{{.Version}}/{{.Name}}_linux_amd64.tar.gz
-    version: v0.6.0 # renovate: tfnotify
+    version: v0.6.0 # renovate: depName=mercari/tfnotify
     files:
     - name: tfnotify
       archive: tfnotify
