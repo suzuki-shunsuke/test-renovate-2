@@ -30,7 +30,7 @@ packages:
       archive: "{{.Name}}"
   tfnotify:
     url: https://github.com/mercari/{{.Name}}/releases/download/{{.Version}}/{{.Name}}_linux_amd64.tar.gz
-    version: v0.6.0 # renovate: depName=mercari/tfnotify
+    version: v0.7.0 # renovate: depName=mercari/tfnotify
     files:
     - name: tfnotify
       archive: tfnotify
