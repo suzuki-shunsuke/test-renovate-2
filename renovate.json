@@ -1,9 +1,13 @@
 {
-  "packageRules": [
+  "extends": [
+    "config:base"
+  ],
+  "regexManagers": [
     {
-      "packageNames": ["golang"],
-      "updateTypes": ["minor", "patch", "pin"],
-      "automerge": true
+      "fileMatch": [".akoi.yml"],
+      "matchStrings": ["version: (?<currentValue>.*?) # renovate: depName=(?<depName>.*?)\\n"],
+      "datasourceTemplate": "github-releases"
     }
   ]
 }
+
