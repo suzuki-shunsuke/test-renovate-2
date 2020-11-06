@@ -36,7 +36,7 @@ packages:
       archive: tfnotify
   gomplate:
     url: "https://github.com/hairyhenderson/gomplate/releases/download/{{.Version}}/gomplate_linux-amd64-slim"
-    version: v3.7.0 # renovate: depName=hairyhenderson/gomplate
+    version: v3.8.0 # renovate: depName=hairyhenderson/gomplate
     archive_type: unarchived
     files:
     - name: gomplate
