@@ -1,13 +1,9 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "regexManagers": [
+  "packageRules": [
     {
-      "fileMatch": [".akoi.yml"],
-      "matchStrings": ["version: (?<currentValue>.*?) # renovate: depName=(?<depName>.*?)\\n"],
-      "datasourceTemplate": "github-releases"
+      "managers": ["terraform"],
+      "additionalBranchPrefix": "{{parentDir}}-",
+      "packagePatterns": [".*"]
     }
   ]
 }
-
