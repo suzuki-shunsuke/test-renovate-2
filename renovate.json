@@ -3,7 +3,8 @@
     {
       "managers": ["terraform"],
       "additionalBranchPrefix": "{{baseDir}}-",
-      "packagePatterns": [".*"]
+      "packagePatterns": [".*"],
+      "commitMessageSuffix": "({{baseDir}})"
     }
   ]
 }
