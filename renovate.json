@@ -2,7 +2,7 @@
   "packageRules": [
     {
       "managers": ["terraform"],
-      "additionalBranchPrefix": "{{parentDir}}-",
+      "additionalBranchPrefix": "{{baseDir}}-",
       "packagePatterns": [".*"]
     }
   ]
