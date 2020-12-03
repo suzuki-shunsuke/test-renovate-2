@@ -4,8 +4,8 @@
       "managers": ["terraform"],
       "additionalBranchPrefix": "{{baseDir}}-",
       "packagePatterns": [".*"],
-      "commitMessageSuffix": "({{baseDir}})",
-      "prConcurrentLimit": 1
+      "commitMessageSuffix": "({{baseDir}})"
     }
-  ]
+  ],
+  "prConcurrentLimit": 1
 }
