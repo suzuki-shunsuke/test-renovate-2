@@ -1,11 +1,36 @@
 {
+  "labels": [
+    "renovate:{{depName}}"
+  ],
+  "enabledManagers": ["helmfile"],
   "packageRules": [
     {
-      "managers": ["terraform"],
-      "additionalBranchPrefix": "{{baseDir}}-",
+      "managers": ["helmfile"],
       "packagePatterns": [".*"],
+      "updateTypes": ["minor", "patch", "pin"],
+      "additionalBranchPrefix": "{{baseDir}}-",
       "commitMessageSuffix": "({{baseDir}})"
+    },
+    {
+      "datasources": ["helm"],
+      "packageNames": ["ingress-nginx"],
+      "prBodyNotes": [
+        "[compare](https://github.com/kubernetes/ingress-nginx/compare/helm-chart-{{currentVersion}}...helm-chart-{{newVersion}})"
+      ]
+    },
+    {
+      "datasources": ["helm"],
+      "packageNames": ["datadog"],
+      "prBodyNotes": [
+        "[compare](https://github.com/DataDog/helm-charts/compare/datadog-{{currentVersion}}...datadog-{{newVersion}})"
+      ]
+    },
+    {
+      "datasources": ["helm"],
+      "packageNames": ["velero"],
+      "prBodyNotes": [
+        "[compare](https://github.com/vmware-tanzu/helm-charts/compare/velero-{{currentVersion}}...velero-{{newVersion}})"
+      ]
     }
-  ],
-  "prConcurrentLimit": 1
+  ]
 }
