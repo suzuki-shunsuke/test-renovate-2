@@ -1,3 +1,3 @@
 provider "aws" {
-  version = "~> 2.50.0"
+  version = "~> 3.25.0"
 }
