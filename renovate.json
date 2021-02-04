@@ -3,14 +3,19 @@
     "renovate:{{depName}}",
     "renovate:{{depName}}/{{newVersion}}"
   ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin"],
+      "schedule": [
+        "at 2:00 am on Mon, Thurs"
+      ]
+    }
+  ],
   "regexManagers": [
     {
       "fileMatch": [".akoi.yml"],
       "matchStrings": ["version: (?<currentValue>.*?)  # renovate: depName=(?<depName>.*?)\\n"],
-      "datasourceTemplate": "github-releases",
-      "schedule": [
-        "at 3:00 pm on Thurs"
-      ]
+      "datasourceTemplate": "github-releases"
     }
   ]
 }
