@@ -6,7 +6,25 @@ link_path: ".akoi/bin/{{.Name}}"
 packages:
   tflint:
     url: https://github.com/terraform-linters/tflint/releases/download/{{.Version}}/tflint_{{.OS}}_{{.Arch}}.zip
-    version: v0.22.0  # renovate: depName=terraform-linters/tflint
+    version: v0.21.0  # renovate: depName=terraform-linters/tflint
     files:
     - name: tflint
       archive: tflint
+  conftest:
+    url: https://github.com/open-policy-agent/conftest/releases/download/{{.Version}}/conftest_{{trimPrefix "v" .Version}}_linux_x86_64.tar.gz
+    version: v0.21.0 # renovate: depName=open-policy-agent/conftest
+    files:
+    - name: conftest
+      archive: conftest
+  ci-info:
+    url: 'https://github.com/suzuki-shunsuke/{{.Name}}/releases/download/{{.Version}}/{{.Name}}_{{trimPrefix "v" .Version}}_{{.OS}}_{{.Arch}}.tar.gz'
+    version: v1.0.0 # renovate: depName=suzuki-shunsuke/ci-info
+    files:
+    - name: ci-info
+      archive: "{{.Name}}"
+  matchfile:
+    url: 'https://github.com/suzuki-shunsuke/{{.Name}}/releases/download/{{.Version}}/{{.Name}}_{{trimPrefix "v" .Version}}_{{.OS}}_{{.Arch}}.tar.gz'
+    version: v0.1.0 # renovate: depName=suzuki-shunsuke/matchfile
+    files:
+    - name: matchfile
+      archive: "{{.Name}}"
