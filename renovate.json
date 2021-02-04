@@ -9,7 +9,7 @@
       "matchStrings": ["version: (?<currentValue>.*?)  # renovate: depName=(?<depName>.*?)\\n"],
       "datasourceTemplate": "github-releases",
       "schedule": [
-        "at 15:00 am on Thurs"
+        "at 3:00 pm on Thurs"
       ]
     }
   ]
