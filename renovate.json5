@@ -6,6 +6,11 @@
       "commitMessageSuffix": "({{packageFileDir}})",
       "matchPackageNames": ["hashicorp/terraform"],
       "matchUpdateTypes": ["patch"]
+    },
+    {
+      "enabled": false,
+      "matchPackageNames": ["hashicorp/terraform"],
+      "matchUpdateTypes": ["major", "minor"]
     }
   ]
 }
