@@ -1,20 +1,6 @@
 {
   "extends": ["config:base"],
-  "packageRules": [
-    {
-      "matchPackageNames": ["hashicorp/terraform"],
-      "separateMinorPatch": true,
-    },
-    {
-      "matchPackageNames": ["hashicorp/terraform"],
-      "matchUpdateTypes": ["patch"],
-      "additionalBranchPrefix": "{{packageFileDir}}-",
-      "commitMessageSuffix": "({{packageFileDir}})",
-    },
-    {
-      "matchPackageNames": ["hashicorp/terraform"],
-      "matchUpdateTypes": ["major", "minor"],
-      "enabled": false,
-    }
-  ]
+  "includePaths": [
+    "foo",
+  ],
 }
