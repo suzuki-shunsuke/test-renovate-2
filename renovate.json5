@@ -1,6 +1,34 @@
 {
+  // Upgrade Terraform to v1.0
   "extends": ["config:base"],
-  "includePaths": [
-    "foo/**/*",
+  "automerge": true,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "additionalBranchPrefix": "{{packageFileDir}}-",
+      "commitMessageSuffix": "({{packageFileDir}})",
+      "matchManagers": ["terraform"],
+      "matchPackagePatterns": [".*"]
+    },
+    {
+      "matchPackageNames": ["hashicorp/terraform"],
+      "separateMinorPatch": true,
+      "additionalBranchPrefix": "{{packageFileDir}}-",
+      "commitMessageSuffix": "({{packageFileDir}})",
+    },
+    {
+      "matchPackageNames": ["hashicorp/terraform"],
+      "matchUpdateTypes": ["minor"],
+      "enabled": false
+    },
+    {
+      // upgrade Terraform to v1.0 automatically.
+      "matchPackageNames": ["hashicorp/terraform"],
+      "allowedVersions": "<=1.0",
+      "automerge": true,
+    },
   ],
 }
