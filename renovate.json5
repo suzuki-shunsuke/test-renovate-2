@@ -1,34 +1,38 @@
 {
-  // Upgrade Terraform to v1.0
-  "extends": ["config:base"],
-  "automerge": true,
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["major"],
-      "automerge": false
-    },
-    {
-      "additionalBranchPrefix": "{{packageFileDir}}-",
-      "commitMessageSuffix": "({{packageFileDir}})",
-      "matchManagers": ["terraform"],
-      "matchPackagePatterns": [".*"]
-    },
-    {
-      "matchPackageNames": ["hashicorp/terraform"],
-      "separateMinorPatch": true,
-      "additionalBranchPrefix": "{{packageFileDir}}-",
-      "commitMessageSuffix": "({{packageFileDir}})",
-    },
-    {
-      "matchPackageNames": ["hashicorp/terraform"],
-      "matchUpdateTypes": ["minor"],
-      "enabled": false
-    },
-    {
-      // upgrade Terraform to v1.0 automatically.
-      "matchPackageNames": ["hashicorp/terraform"],
-      "allowedVersions": "<=1.0",
-      "automerge": true,
-    },
+  "extends": [
+    "github>suzuki-shunsuke/renovate-config:golang"
   ],
+  "regexManagers": [
+    {
+      "fileMatch": ["aqua.yaml"],
+      "matchStrings": [
+        "version: (?<currentValue>.*?) # renovate: depName=(?<depName>.*?)\\n"
+      ],
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": ["tutorial/docker-compose.yml"],
+      "depNameTemplate": "suzuki-shunsuke/aqua",
+      "datasourceTemplate": "github-releases",
+      "matchStrings": [
+        "aqua_version: (?<currentValue>.*)"
+      ]
+    },
+    {
+      "fileMatch": ["tutorial/docker-compose.yml"],
+      "depNameTemplate": "suzuki-shunsuke/aqua-installer",
+      "datasourceTemplate": "github-releases",
+      "matchStrings": [
+        "aqua_installer_version: (?<currentValue>.*)"
+      ]
+    },
+    {
+      "fileMatch": [".*\\.go"],
+      "depNameTemplate": "suzuki-shunsuke/aqua-proxy",
+      "datasourceTemplate": "github-releases",
+      "matchStrings": [
+        '"(?<currentValue>.*)", // renovate: depName=suzuki-shunsuke/aqua-proxy'
+      ]
+    }
+  ]
 }
