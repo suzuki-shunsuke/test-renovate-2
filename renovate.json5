@@ -2,21 +2,14 @@
   extends: [
     "config:base",
   ],
-  packageRules: [
+  "regexManagers": [
     {
-      matchPackageNames: ["golang/go"],
-      matchManagers: ["regex"],
-      extractVersion: "^go(?<version>.*)$",
-    },
-  ],
-  regexManagers: [
-    {
-      fileMatch: ["go-version"],
-      matchStrings: [
-        "(?<currentValue>.*)",
+      "fileMatch": ["\\.?aqua\\.ya?ml"],
+      "matchStrings": [
+        "(version|ref): \"?(?<currentValue>.*)\"? +# renovate: depName=(?<depName>.*)",
+        "name: \"?(?<depName>.*)@(?<currentValue>.*)\"?"
       ],
-      depNameTemplate: "golang/go",
-      datasourceTemplate: "github-releases",
-    },
+      "datasourceTemplate": "github-releases"
+    }
   ]
 }
