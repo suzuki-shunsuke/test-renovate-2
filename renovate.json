@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.?aqua\\.ya?ml"],
+      "matchStrings": [
+        "(version|ref): (?<currentValue>.*) +# renovate: depName=(?<depName>.*)",
+        "(version|ref): \"(?<currentValue>.*)\" +# renovate: depName=(?<depName>.*)",
+        "(version|ref): '(?<currentValue>.*)' +# renovate: depName=(?<depName>.*)",
+        "name: (?<depName>.*)@(?<currentValue>.*)",
+        "name: \"(?<depName>.*)@(?<currentValue>.*)\"",
+        "name: '(?<depName>.*)@(?<currentValue>.*)'"
+      ],
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
