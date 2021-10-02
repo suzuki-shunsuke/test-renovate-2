@@ -8,4 +8,4 @@ packages:
   registry: standard
 - name: ahmetb/kubectl-tree
   registry: standard
-  version: v0.4.0
+  version: v0.4.0 # renovate: depName=ahmetb/kubectl-tree
