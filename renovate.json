@@ -6,12 +6,12 @@
     {
       "fileMatch": ["\\.?aqua\\.ya?ml"],
       "matchStrings": [
-        "^ +(version|ref): (?<currentValue>([^'\"]|\\S)*) +# renovate: depName=(?<depName>.*)",
-        "^ +(version|ref): \"(?<currentValue>([^'\"]|\\S)*)\" +# renovate: depName=(?<depName>.*)",
-        "^ +(version|ref): '(?<currentValue>([^'\"]|\\S)*)' +# renovate: depName=(?<depName>.*)",
-        "name: (?<depName>[^'\"]*)@(?<currentValue>([^'\"]|\\S)*)",
-        "name: \"(?<depName>[^']*)@(?<currentValue>([^'\"]|\\S)*)\"",
-        "name: '(?<depName>[^\"]*)@(?<currentValue>([^'\"]|\\S)*)'"
+        "^ +(version|ref): (?<currentValue>[^'\"\\n]*) +# renovate: depName=(?<depName>.*)",
+        "^ +(version|ref): \"(?<currentValue>[^'\"\\n]*)\" +# renovate: depName=(?<depName>.*)",
+        "^ +(version|ref): '(?<currentValue>[^'\"\\n]*)' +# renovate: depName=(?<depName>.*)",
+        "name: (?<depName>[^'\"]*)@(?<currentValue>[^'\"\\n]*)",
+        "name: \"(?<depName>[^']*)@(?<currentValue>[^'\"\\n]*)\"",
+        "name: '(?<depName>[^\"]*)@(?<currentValue>[^'\"\\n]*)'"
       ],
       "datasourceTemplate": "github-releases"
     }
