@@ -8,7 +8,7 @@ packages:
   registry: standard
 - name: ahmetb/kubectl-tree
   registry: standard
-  version: v0.4.0 # renovate: depName=ahmetb/kubectl-tree
+  version: v0.4.1 # renovate: depName=ahmetb/kubectl-tree
 - name: "ahmetb/kubectx@v0.9.4"
   registry: standard
 - name: 'antonmedv/fx@20.0.2'
