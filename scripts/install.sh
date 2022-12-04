@@ -17,4 +17,4 @@ chmod a+x aqua-installer
 curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.2/aqua-installer | bash -s -- -v v1.20.0 -i bin/aqua-installer
 
 # use aqua-installer -i option
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.2/aqua-installer | bash -s -- -i bin/aqua-installer -v v1.20.0
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.2/aqua-installer | bash -s -- -i bin/installer -v v1.20.0
