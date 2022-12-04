@@ -9,7 +9,7 @@
     {
       "fileMatch": ["scripts/.*\\.sh"],
       "matchStrings": [
-        "aqua-installer +(\\| +(ba|z)?sh -s --)? -v ['\"]?(?<currentValue>[^'\" \\n]+)['\"]?\\s"
+        "aqua-installer +(\\| +(ba|z)?sh -s -- )?-v ['\"]?(?<currentValue>[^'\" \\n]+)['\"]?\\s"
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "aquaproj/aqua"
