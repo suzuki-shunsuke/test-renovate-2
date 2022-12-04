@@ -2,18 +2,17 @@
   "extends": [
     "config:base"
   ],
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0,
+  "branchConcurrentLimit": 0,
   "regexManagers": [
     {
-      "fileMatch": ["\\.?aqua\\.ya?ml"],
+      "fileMatch": ["scripts/.*\\.sh"],
       "matchStrings": [
-        " +(version|ref): (?<currentValue>[^'\"\\n]*) +# renovate: depName=(?<depName>[^\\n]+)",
-        " +(version|ref): \"(?<currentValue>[^'\"\\n]*)\" +# renovate: depName=(?<depName>[^\\n]+)",
-        " +(version|ref): '(?<currentValue>[^'\"\\n]*)' +# renovate: depName=(?<depName>[^\\n]+)",
-        " +name: (?<depName>[^'\"\\n]*)@(?<currentValue>[^'\"\\n]+)",
-        " +name: \"(?<depName>[^'\\n]*)@(?<currentValue>[^'\"\\n]+)\"",
-        " +name: '(?<depName>[^\"\\n]*)@(?<currentValue>[^'\"\\n]+)'"
+        "aqua-installer +\\| +(ba|z)?sh -s -- -v ['\"]?(?<currentValue>[^'\" \\n]+)['\"]?\\s"
       ],
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "aquaproj/aqua"
     }
   ]
 }
