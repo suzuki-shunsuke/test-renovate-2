@@ -2,6 +2,12 @@
 
 curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.2/aqua-installer | bash -s -- -v v1.20.0
 
+# zsh
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.2/aqua-installer | zsh -s -- -v v1.20.0
+
+# sh
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.2/aqua-installer | sh -s -- -v v1.20.0
+
 # single quote
 curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.2/aqua-installer | bash -s -- -v 'v1.20.0'
 
