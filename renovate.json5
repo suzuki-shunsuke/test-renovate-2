@@ -37,7 +37,7 @@
             " +(?:name|'name'|\"name\") *: +'golang/go@(go)?(?<currentValue>[^'\" \\n]+)'",
             " +(?:name|'name'|\"name\") *: +\"golang/go@(go)?(?<currentValue>[^'\" \\n]+)\""
          ],
-         "versioningTemplate": "go-mod-directive",
+         "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?$",
       },
   ]
 }
