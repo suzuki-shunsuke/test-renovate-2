@@ -1,0 +1,43 @@
+{
+  extends: [
+    "config:base",
+    "github>suzuki-shunsuke/renovate-config:nolimit#1.1.0",
+    "github>aquaproj/aqua-renovate-config#1.5.1",
+  ],
+  packageRules: [
+      {
+         matchManagers: [
+            "regex"
+         ],
+         matchPackageNames: [
+            "golang/go"
+         ],
+         matchPaths: [
+            "**/.aqua.yaml",
+            "**/.aqua.yml",
+            "**/aqua.yaml",
+            "**/aqua.yml"
+         ],
+	 rangeStrategy: "bump",
+      }
+  ],
+  regexManagers: [
+      {
+         "datasourceTemplate": "golang-version",
+         "depNameTemplate": "golang/go",
+         "extractVersionTemplate": "^go(?<version>.*)$",
+         "fileMatch": [
+            "\\.?aqua\\.ya?ml"
+         ],
+         "matchStrings": [
+            " +(?:version|'version'|\"version\") *: +(go)?(?<currentValue>[^'\" \\n]+) +# renovate: depName=golang/go[ \\n]",
+            " +(?:version|'version'|\"version\") *: +'(go)?(?<currentValue>[^'\" \\n]+)' +# renovate: depName=golang/go[ \\n]",
+            " +(?:version|'version'|\"version\") *: +\"(go)?(?<currentValue>[^'\" \\n]+)\" +# renovate: depName=golang/go[ \\n]",
+            " +(?:name|'name'|\"name\") *: +golang/go@(go)?(?<currentValue>[^'\" \\n]+)",
+            " +(?:name|'name'|\"name\") *: +'golang/go@(go)?(?<currentValue>[^'\" \\n]+)'",
+            " +(?:name|'name'|\"name\") *: +\"golang/go@(go)?(?<currentValue>[^'\" \\n]+)\""
+         ],
+         "versioningTemplate": "go-mod-directive",
+      },
+  ]
+}
