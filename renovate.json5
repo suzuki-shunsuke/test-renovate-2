@@ -18,7 +18,7 @@
             "**/aqua.yaml",
             "**/aqua.yml"
          ],
-	 rangeStrategy: "bump",
+         separateMinorPatch: true,
       }
   ],
   regexManagers: [
