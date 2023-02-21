@@ -1,6 +1,8 @@
 ---
 name: test
-on: pull_request
+on:
+  pull_request: {}
+  issue_comment: {}
 permissions: {}
 jobs:
   test:
