@@ -10,4 +10,4 @@ registries:
 - type: standard
   ref: v4.48.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: jqlang/jq@jq-1.6
+- name: jqlang/jq@jq-1.7
