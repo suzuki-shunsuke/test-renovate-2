@@ -1,26 +1,9 @@
 {
   extends: [
     "config:base",
+    "github>aquaproj/aqua-renovate-config",
   ],
   "branchConcurrentLimit": 0,
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
-  "regexManagers": [
-      {
-         "datasourceTemplate": "github-releases",
-         "depNameTemplate": "jqlang/jq",
-         "extractVersionTemplate": "^jq-(?<version>.*)$",
-         "fileMatch": [
-            "\\.?aqua\\.ya?ml"
-         ],
-         "matchStrings": [
-            " +(?:version|'version'|\"version\") *: +jq-(?<currentValue>[^'\" \\n]+) +# renovate: depName=jqlang/jq[ \\n]",
-            " +(?:version|'version'|\"version\") *: +'jq-(?<currentValue>[^'\" \\n]+)' +# renovate: depName=jqlang/jq[ \\n]",
-            " +(?:version|'version'|\"version\") *: +\"jq-(?<currentValue>[^'\" \\n]+)\" +# renovate: depName=jqlang/jq[ \\n]",
-            " +(?:name|'name'|\"name\") *: +jqlang/jq@jq-(?<currentValue>[^'\" \\n]+)",
-            " +(?:name|'name'|\"name\") *: +'jqlang/jq@jq-(?<currentValue>[^'\" \\n]+)'",
-            " +(?:name|'name'|\"name\") *: +\"jqlang/jq@jq-(?<currentValue>[^'\" \\n]+)\""
-         ]
-      }
-  ],
 }
