@@ -3,6 +3,6 @@ description: test
 runs:
   using: composite
   steps:
-    - uses: aquaproj/aqua-installer@v2.1.2
+    - uses: aquaproj/aqua-installer@v2.3.0
       with:
         aqua_version: v2.0.0
