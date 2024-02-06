@@ -1,7 +1,6 @@
 {
   extends: [
-    "config:base",
-    "github>aquaproj/aqua-renovate-config",
+    "helpers:pinGitHubActionDigestsToSemver"
   ],
   "branchConcurrentLimit": 0,
   "prConcurrentLimit": 0,
